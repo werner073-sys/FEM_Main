@@ -8,7 +8,7 @@ This guide will help you build the FEM Android app in your local development env
 
 ### Required Software
 1. **Java Development Kit (JDK)**
-   - JDK 8 or higher
+   - JDK 11 or higher (JDK 17 recommended)
    - Download from: https://adoptium.net/
 
 2. **Android Studio** (Recommended)

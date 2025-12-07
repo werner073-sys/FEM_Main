@@ -28,7 +28,7 @@ For detailed build instructions, see **[BUILD_GUIDE.md](BUILD_GUIDE.md)**
 
 ### Prerequisites
 
-- JDK 8 or higher
+- JDK 11 or higher
 - Android SDK with API 34
 - Gradle (included via wrapper)
 
