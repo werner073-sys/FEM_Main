@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme with bio-luminescent aesthetic -->
+    <style name="Base.Theme.FEM" parent="Theme.Material3.Dark.NoActionBar">
+        <!-- Primary brand color -->
+        <item name="colorPrimary">@color/bio_glow_primary</item>
+        <item name="colorPrimaryVariant">@color/bio_glow_dark</item>
+        <item name="colorOnPrimary">@color/background_dark</item>
+        
+        <!-- Secondary brand color -->
+        <item name="colorSecondary">@color/bio_glow_secondary</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/background_dark</item>
+        
+        <!-- Background colors -->
+        <item name="android:colorBackground">@color/background_dark</item>
+        <item name="colorSurface">@color/surface_dark</item>
+        <item name="colorOnBackground">@color/text_primary</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        
+        <!-- Status bar -->
+        <item name="android:statusBarColor">@color/background_darker</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
+    </style>
+
+    <style name="Theme.FEM" parent="Base.Theme.FEM" />
+    
+    <!-- Splash screen theme -->
+    <style name="Theme.FEM.Splash" parent="Theme.FEM">
+        <item name="android:windowBackground">@drawable/splash_background</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+    
+    <!-- Button styles with bio-luminescent effect -->
+    <style name="Widget.FEM.Button" parent="Widget.Material3.Button">
+        <item name="backgroundTint">@color/bio_glow_primary</item>
+        <item name="android:textColor">@color/background_dark</item>
+        <item name="cornerRadius">24dp</item>
+    </style>
+</resources>

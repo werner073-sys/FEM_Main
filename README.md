@@ -1,58 +1,157 @@
-# FEM - Beta Preview
+# FEM - Empowering Women, Illuminating Lives
 
-## 🎉 Welcome to FEM Beta!
+FEM is a modern Android application designed with a beautiful bio-luminescent aesthetic, created to empower and support women through technology.
 
-FEM is a digital sanctuary that harmonizes with your body's rhythms. Experience our Bio-Luminescent aesthetic designed to empower and support women through technology.
+## Features
 
-## 🚀 View the Beta Preview
+- 🎨 Modern bio-luminescent UI design with glowing cyan/teal aesthetics
+- 📱 Native Android app built with Kotlin
+- 🎯 Material Design 3 components
+- 🌙 Dark theme optimized for OLED displays
+- ⚡ Smooth animations and transitions
+- 📦 Google Play Store ready
 
-**To see what the app looks like, simply open the `beta-preview.html` file in your web browser!**
+## Tech Stack
 
-### Quick Start:
-1. Download or clone this repository
-2. Open `beta-preview.html` in any modern web browser (Chrome, Firefox, Safari, Edge)
-3. Enjoy the interactive preview of the FEM app!
+- **Language**: Kotlin
+- **Min SDK**: 24 (Android 7.0)
+- **Target SDK**: 34 (Android 14)
+- **Build System**: Gradle 8.0
+- **UI Framework**: Material Design 3
+- **Architecture**: Modern Android development practices
 
-### Features Showcased:
-- ✨ Bio-Luminescent aesthetic with glowing cyan/teal colors
-- 🌙 Dark theme optimized for comfort
-- 💫 Smooth animations and transitions
-- 📱 Mobile phone frame for authentic app experience
-- 🎨 Interactive buttons with toast notifications
+## Getting Started
 
-## 🌟 About FEM
+### Download APK (Ready to Install)
 
-Discover FEM: a digital sanctuary that harmonizes with your body's rhythms. Immerse yourself in our "Bio-Luminescent" aesthetic while exploring:
+Want to try the app right now? Download the pre-built APK:
 
-- **Lunar Dial** - AI-curated cycle rituals and somatic relief
-- **Womb View** - Ethereal 3D pregnancy artistry
-- **Stardust Letters** - Touching messages from your baby
-- **Wellness Hub** - Hormone-balancing recipes and dream interpretation
+[![Build Status](https://github.com/werner073-sys/FEM_Main/actions/workflows/build-apk.yml/badge.svg)](https://github.com/werner073-sys/FEM_Main/actions)
 
-## 🎨 Design
+1. Go to [Actions](https://github.com/werner073-sys/FEM_Main/actions) tab
+2. Click latest "Build Android APK" workflow
+3. Download `app-debug` artifact
+4. Install on your Android device
 
-The app features a modern bio-luminescent design with:
-- Primary color: Cyan (#00E5FF)
-- Secondary color: Teal (#1DE9B6)
-- Dark background with glowing effects
-- Material Design 3 principles
-- Smooth animations and interactive elements
+See **[DOWNLOAD_APK.md](DOWNLOAD_APK.md)** for detailed instructions and troubleshooting.
 
-## 📱 Full Android App
+### Quick Start Guide
 
-The complete Android application is available in PR #2. It includes:
-- Native Android app built with Kotlin
-- Material Design 3 components
-- Google Play Store ready
-- Target SDK 34 (Android 14)
-- Min SDK 24 (Android 7.0+)
+For detailed build instructions, see **[BUILD_GUIDE.md](BUILD_GUIDE.md)**
 
-For more details, see the [Android app PR](https://github.com/werner073-sys/FEM_Main/pull/2).
+### Prerequisites
 
-## 📄 License
+- JDK 11 or higher
+- Android SDK with API 34
+- Gradle (included via wrapper)
+
+### Building the App
+
+```bash
+# Build debug APK
+./gradlew assembleDebug
+
+# Build release APK
+./gradlew assembleRelease
+
+# Install on connected device
+./gradlew installDebug
+
+# Run tests
+./gradlew test
+```
+
+> **Note**: Building requires internet access to download dependencies from Maven Central and Google Maven repositories. If you're in a restricted network environment, ensure you can access:
+> - https://repo.maven.apache.org/maven2/
+> - https://dl.google.com/dl/android/maven2/
+>
+> **Behind a firewall or proxy?** See **[FIREWALL_GUIDE.md](FIREWALL_GUIDE.md)** for detailed configuration instructions.
+
+## Project Structure
+
+```
+app/
+├── src/main/
+│   ├── java/com/fem/app/     # Kotlin source files
+│   ├── res/                   # Resources
+│   │   ├── layout/           # UI layouts
+│   │   ├── values/           # Strings, colors, themes
+│   │   ├── drawable/         # Vector graphics
+│   │   └── mipmap/           # App icons
+│   └── AndroidManifest.xml   # App configuration
+├── build.gradle.kts          # App build configuration
+└── proguard-rules.pro        # ProGuard rules
+```
+
+## Google Play Store Readiness
+
+This app is configured for Google Play Store submission with:
+
+- ✅ Proper versioning (versionCode and versionName)
+- ✅ Required permissions properly declared
+- ✅ Target SDK 34 (latest)
+- ✅ ProGuard configuration for release builds
+- ✅ Adaptive launcher icons
+- ✅ Material Design 3 compliance
+- ✅ Privacy and backup rules
+- ✅ Proper package naming
+
+### Before Publishing
+
+See **[PLAY_STORE_CHECKLIST.md](PLAY_STORE_CHECKLIST.md)** for a comprehensive submission checklist.
+
+Key steps:
+1. Update app signing configuration in `app/build.gradle.kts`
+2. Create and add keystore file
+3. Add privacy policy URL (template provided in [PRIVACY_POLICY.md](PRIVACY_POLICY.md))
+4. Update app description and screenshots
+5. Test on multiple devices and Android versions
+6. Run full test suite
+
+## Testing with Firebase
+
+Want to test the app before releasing to the Play Store? Use **Firebase App Distribution** to share builds with testers.
+
+See **[FIREBASE_GUIDE.md](FIREBASE_GUIDE.md)** for complete instructions on:
+- Setting up Firebase App Distribution
+- Building and uploading APK files
+- Inviting testers
+- Collecting feedback
+
+Quick start:
+```bash
+# Build debug APK
+./gradlew assembleDebug
+
+# Upload to Firebase Console or use Firebase CLI
+firebase appdistribution:distribute app/build/outputs/apk/debug/app-debug.apk
+```
+
+## Documentation
+
+- **[DOWNLOAD_APK.md](DOWNLOAD_APK.md)** - How to get and install the APK
+- **[BUILD_GUIDE.md](BUILD_GUIDE.md)** - Comprehensive build instructions
+- **[FIREWALL_GUIDE.md](FIREWALL_GUIDE.md)** - Firewall and proxy configuration help
+- **[FIREBASE_GUIDE.md](FIREBASE_GUIDE.md)** - Firebase App Distribution setup for testing
+- **[PLAY_STORE_CHECKLIST.md](PLAY_STORE_CHECKLIST.md)** - Play Store submission guide
+- **[PRIVACY_POLICY.md](PRIVACY_POLICY.md)** - Privacy policy template
+- **[CONTRIBUTING.md](CONTRIBUTING.md)** - Contribution guidelines
+
+## Contributing
+
+Contributions are welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
+
+## License
 
 See [LICENSE](LICENSE) file for details.
 
----
+## Support
 
-**Beta Version 1.0** - Experience the future of women's wellness technology
+If you encounter issues:
+1. Check the [Issues](https://github.com/werner073-sys/FEM_Main/issues) page
+2. Review the [BUILD_GUIDE.md](BUILD_GUIDE.md)
+3. Create a new issue with detailed information
+
+## Screenshots
+
+_Screenshots will be added once the app is built and tested on physical devices._
