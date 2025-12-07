@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FEM</string>
+    <string name="welcome_message">Welcome to FEM</string>
+    <string name="tagline">Empowering Women, Illuminating Lives</string>
+    <string name="get_started">Get Started</string>
+    <string name="explore">Explore</string>
+    <string name="about_title">About FEM</string>
+    <string name="about_description">FEM is a platform dedicated to empowering women through community, resources, and support. Join us in creating a brighter future together.</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="terms_of_service">Terms of Service</string>
+</resources>
