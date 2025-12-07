@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FEM App - Beta Preview</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .phone-frame {
+            width: 375px;
+            height: 812px;
+            background: #121212;
+            border-radius: 40px;
+            box-shadow: 0 0 50px rgba(0, 229, 255, 0.3),
+                        0 0 100px rgba(29, 233, 182, 0.2);
+            position: relative;
+            overflow: hidden;
+            border: 8px solid #1e1e1e;
+        }
+
+        .status-bar {
+            height: 44px;
+            background: rgba(18, 18, 18, 0.95);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            font-size: 14px;
+        }
+
+        .app-content {
+            height: calc(100% - 44px);
+            overflow-y: auto;
+            background: linear-gradient(180deg, #121212 0%, #1a1a2e 100%);
+            position: relative;
+        }
+
+        /* Animated background orbs */
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            opacity: 0.3;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .orb1 {
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, #00E5FF 0%, transparent 70%);
+            top: -50px;
+            right: -50px;
+            animation-delay: 0s;
+        }
+
+        .orb2 {
+            width: 250px;
+            height: 250px;
+            background: radial-gradient(circle, #1DE9B6 0%, transparent 70%);
+            bottom: -80px;
+            left: -80px;
+            animation-delay: -10s;
+        }
+
+        .orb3 {
+            width: 180px;
+            height: 180px;
+            background: radial-gradient(circle, #64FFDA 0%, transparent 70%);
+            top: 50%;
+            right: -60px;
+            animation-delay: -5s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translate(0, 0) scale(1);
+            }
+            33% {
+                transform: translate(30px, -30px) scale(1.1);
+            }
+            66% {
+                transform: translate(-20px, 20px) scale(0.9);
+            }
+        }
+
+        .content-wrapper {
+            position: relative;
+            z-index: 1;
+            padding: 40px 24px;
+        }
+
+        .app-logo {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 30px;
+            background: radial-gradient(circle, #00E5FF 0%, #1DE9B6 100%);
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            font-weight: 300;
+            box-shadow: 0 0 40px rgba(0, 229, 255, 0.6),
+                        0 0 80px rgba(29, 233, 182, 0.4);
+            animation: pulse 3s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 0 40px rgba(0, 229, 255, 0.6),
+                            0 0 80px rgba(29, 233, 182, 0.4);
+            }
+            50% {
+                box-shadow: 0 0 60px rgba(0, 229, 255, 0.8),
+                            0 0 120px rgba(29, 233, 182, 0.6);
+            }
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 32px;
+            font-weight: 300;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, #00E5FF 0%, #1DE9B6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .tagline {
+            text-align: center;
+            font-size: 14px;
+            color: #64FFDA;
+            margin-bottom: 40px;
+            opacity: 0.8;
+        }
+
+        .card {
+            background: rgba(30, 30, 30, 0.6);
+            border: 2px solid rgba(0, 229, 255, 0.3);
+            border-radius: 20px;
+            padding: 24px;
+            margin-bottom: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4),
+                        inset 0 0 0 1px rgba(100, 255, 218, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: rgba(0, 229, 255, 0.6);
+            box-shadow: 0 8px 32px rgba(0, 229, 255, 0.3),
+                        inset 0 0 0 1px rgba(100, 255, 218, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .card h2 {
+            font-size: 18px;
+            font-weight: 400;
+            color: #00E5FF;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .button {
+            width: 100%;
+            padding: 16px;
+            margin: 12px 0;
+            border: none;
+            border-radius: 24px;
+            background: linear-gradient(135deg, #00E5FF 0%, #1DE9B6 100%);
+            color: #121212;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0, 229, 255, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .button:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .button:hover {
+            box-shadow: 0 6px 30px rgba(0, 229, 255, 0.6),
+                        0 0 40px rgba(29, 233, 182, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .button:active {
+            transform: translateY(0);
+        }
+
+        .button span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .button-secondary {
+            background: rgba(0, 229, 255, 0.1);
+            color: #00E5FF;
+            border: 2px solid #00E5FF;
+            box-shadow: 0 4px 20px rgba(0, 229, 255, 0.2);
+        }
+
+        .button-secondary:hover {
+            background: rgba(0, 229, 255, 0.2);
+            box-shadow: 0 6px 30px rgba(0, 229, 255, 0.4);
+        }
+
+        .features-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .features-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(0, 229, 255, 0.1);
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+        }
+
+        .features-list li:last-child {
+            border-bottom: none;
+        }
+
+        .features-list li::before {
+            content: '✨';
+            margin-right: 12px;
+            font-size: 18px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Toast notification */
+        .toast {
+            position: fixed;
+            bottom: 100px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: rgba(0, 229, 255, 0.95);
+            color: #121212;
+            padding: 16px 24px;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: 600;
+            box-shadow: 0 8px 32px rgba(0, 229, 255, 0.6);
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="phone-frame">
+        <div class="status-bar">
+            <span>9:41</span>
+            <span>●●●●●</span>
+        </div>
+        
+        <div class="app-content">
+            <div class="orb orb1"></div>
+            <div class="orb orb2"></div>
+            <div class="orb orb3"></div>
+            
+            <div class="content-wrapper">
+                <div class="app-logo">FEM</div>
+                
+                <h1>Welcome to FEM</h1>
+                <p class="tagline">Empowering Women, Illuminating Lives</p>
+                
+                <div class="card">
+                    <h2>🌟 About FEM</h2>
+                    <p>A digital sanctuary that harmonizes with your body's rhythms. Experience our Bio-Luminescent aesthetic designed to empower and support women through technology.</p>
+                </div>
+                
+                <button class="button" onclick="showToast('Welcome to FEM! Let\'s get started on your journey.')">
+                    <span>Get Started</span>
+                </button>
+                
+                <button class="button button-secondary" onclick="showToast('Explore features coming soon!')">
+                    <span>Explore Features</span>
+                </button>
+                
+                <div class="card">
+                    <h2>✨ Key Features</h2>
+                    <ul class="features-list">
+                        <li>Lunar Dial - AI-curated cycle rituals</li>
+                        <li>Womb View - Ethereal 3D pregnancy artistry</li>
+                        <li>Stardust Letters - Messages from your baby</li>
+                        <li>Wellness Hub - Recipes & dream interpretation</li>
+                        <li>Bio-Luminescent - Glowing aesthetic design</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <h2>🎨 Design Philosophy</h2>
+                    <p>Our bio-luminescent theme features glowing cyan and teal colors that create a calming, empowering experience. Every element is designed to connect you with your inner strength.</p>
+                </div>
+                
+                <div class="footer">
+                    FEM Beta v1.0 | Android 7.0+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+    <script>
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.classList.add('show');
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        // Add smooth scroll
+        document.querySelector('.app-content').style.scrollBehavior = 'smooth';
+    </script>
+</body>
+</html>
