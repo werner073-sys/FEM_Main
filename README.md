@@ -22,6 +22,19 @@ FEM is a modern Android application designed with a beautiful bio-luminescent ae
 
 ## Getting Started
 
+### Download APK (Ready to Install)
+
+Want to try the app right now? Download the pre-built APK:
+
+[![Build Status](https://github.com/werner073-sys/FEM_Main/actions/workflows/build-apk.yml/badge.svg)](https://github.com/werner073-sys/FEM_Main/actions)
+
+1. Go to [Actions](https://github.com/werner073-sys/FEM_Main/actions) tab
+2. Click latest "Build Android APK" workflow
+3. Download `app-debug` artifact
+4. Install on your Android device
+
+See **[DOWNLOAD_APK.md](DOWNLOAD_APK.md)** for detailed instructions and troubleshooting.
+
 ### Quick Start Guide
 
 For detailed build instructions, see **[BUILD_GUIDE.md](BUILD_GUIDE.md)**
@@ -116,6 +129,7 @@ firebase appdistribution:distribute app/build/outputs/apk/debug/app-debug.apk
 
 ## Documentation
 
+- **[DOWNLOAD_APK.md](DOWNLOAD_APK.md)** - How to get and install the APK
 - **[BUILD_GUIDE.md](BUILD_GUIDE.md)** - Comprehensive build instructions
 - **[FIREWALL_GUIDE.md](FIREWALL_GUIDE.md)** - Firewall and proxy configuration help
 - **[FIREBASE_GUIDE.md](FIREBASE_GUIDE.md)** - Firebase App Distribution setup for testing

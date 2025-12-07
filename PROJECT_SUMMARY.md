@@ -140,7 +140,17 @@ Features:
 
 ## Documentation Provided
 
-### 1. BUILD_GUIDE.md
+### 1. DOWNLOAD_APK.md
+Guide for obtaining and installing the APK:
+- Downloading from GitHub Actions artifacts
+- Building locally
+- Using Firebase App Distribution
+- GitHub Releases
+- Installation instructions for Android
+- Troubleshooting common issues
+- Debug vs Release APK comparison
+
+### 2. BUILD_GUIDE.md
 Comprehensive guide covering:
 - Prerequisites and setup
 - Build commands
@@ -149,7 +159,7 @@ Comprehensive guide covering:
 - Troubleshooting (including firewall/proxy issues)
 - CI/CD setup
 
-### 2. FIREWALL_GUIDE.md
+### 3. FIREWALL_GUIDE.md
 Detailed firewall and network configuration guide:
 - Required domain access
 - Proxy configuration (gradle.properties, environment variables, Android Studio)
@@ -159,7 +169,7 @@ Detailed firewall and network configuration guide:
 - Corporate IT request template
 - Authentication and SSL troubleshooting
 
-### 3. FIREBASE_GUIDE.md
+### 4. FIREBASE_GUIDE.md
 Firebase App Distribution setup guide:
 - Setting up Firebase project
 - Adding Android app to Firebase
@@ -169,7 +179,7 @@ Firebase App Distribution setup guide:
 - Automated distribution with CI/CD
 - Troubleshooting installation issues
 
-### 4. PLAY_STORE_CHECKLIST.md
+### 5. PLAY_STORE_CHECKLIST.md
 Complete checklist including:
 - Pre-submission requirements
 - Technical requirements
@@ -178,7 +188,7 @@ Complete checklist including:
 - Release process
 - Post-launch tasks
 
-### 5. PRIVACY_POLICY.md
+### 6. PRIVACY_POLICY.md
 Template privacy policy covering:
 - Information collection
 - Data usage
@@ -187,7 +197,7 @@ Template privacy policy covering:
 - Children's privacy
 - Contact information
 
-### 6. CONTRIBUTING.md
+### 7. CONTRIBUTING.md
 Contribution guidelines including:
 - How to report bugs
 - Feature suggestions
@@ -196,7 +206,7 @@ Contribution guidelines including:
 - Testing requirements
 - Documentation guidelines
 
-### 7. README.md
+### 8. README.md
 Updated with:
 - Project overview
 - Features list
