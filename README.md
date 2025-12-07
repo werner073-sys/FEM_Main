@@ -16,19 +16,23 @@ FEM is a modern Android application designed with a beautiful bio-luminescent ae
 - **Language**: Kotlin
 - **Min SDK**: 24 (Android 7.0)
 - **Target SDK**: 34 (Android 14)
-- **Build System**: Gradle 8.2
+- **Build System**: Gradle 8.0
 - **UI Framework**: Material Design 3
 - **Architecture**: Modern Android development practices
 
-## Building the App
+## Getting Started
+
+### Quick Start Guide
+
+For detailed build instructions, see **[BUILD_GUIDE.md](BUILD_GUIDE.md)**
 
 ### Prerequisites
 
-- Android SDK
 - JDK 8 or higher
-- Gradle 8.2 (included via wrapper)
+- Android SDK with API 34
+- Gradle (included via wrapper)
 
-### Build Commands
+### Building the App
 
 ```bash
 # Build debug APK
@@ -43,6 +47,10 @@ FEM is a modern Android application designed with a beautiful bio-luminescent ae
 # Run tests
 ./gradlew test
 ```
+
+> **Note**: Building requires internet access to download dependencies from Maven Central and Google Maven repositories. If you're in a restricted network environment, ensure you can access:
+> - https://repo.maven.apache.org/maven2/
+> - https://dl.google.com/dl/android/maven2/
 
 ## Project Structure
 
@@ -75,17 +83,38 @@ This app is configured for Google Play Store submission with:
 
 ### Before Publishing
 
+See **[PLAY_STORE_CHECKLIST.md](PLAY_STORE_CHECKLIST.md)** for a comprehensive submission checklist.
+
+Key steps:
 1. Update app signing configuration in `app/build.gradle.kts`
 2. Create and add keystore file
-3. Add privacy policy URL
+3. Add privacy policy URL (template provided in [PRIVACY_POLICY.md](PRIVACY_POLICY.md))
 4. Update app description and screenshots
 5. Test on multiple devices and Android versions
 6. Run full test suite
+
+## Documentation
+
+- **[BUILD_GUIDE.md](BUILD_GUIDE.md)** - Comprehensive build instructions
+- **[PLAY_STORE_CHECKLIST.md](PLAY_STORE_CHECKLIST.md)** - Play Store submission guide
+- **[PRIVACY_POLICY.md](PRIVACY_POLICY.md)** - Privacy policy template
+- **[CONTRIBUTING.md](CONTRIBUTING.md)** - Contribution guidelines
+
+## Contributing
+
+Contributions are welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
 
 ## License
 
 See [LICENSE](LICENSE) file for details.
 
-## Contributing
+## Support
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+If you encounter issues:
+1. Check the [Issues](https://github.com/werner073-sys/FEM_Main/issues) page
+2. Review the [BUILD_GUIDE.md](BUILD_GUIDE.md)
+3. Create a new issue with detailed information
+
+## Screenshots
+
+_Screenshots will be added once the app is built and tested on physical devices._
