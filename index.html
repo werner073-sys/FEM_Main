@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FEM - Beta Preview</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            text-align: center;
+        }
+
+        .logo {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 30px;
+            background: radial-gradient(circle, #00E5FF 0%, #1DE9B6 100%);
+            border-radius: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            font-weight: 300;
+            box-shadow: 0 0 60px rgba(0, 229, 255, 0.6),
+                        0 0 120px rgba(29, 233, 182, 0.4);
+            animation: pulse 3s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 0 60px rgba(0, 229, 255, 0.6),
+                            0 0 120px rgba(29, 233, 182, 0.4);
+                transform: scale(1);
+            }
+            50% {
+                box-shadow: 0 0 80px rgba(0, 229, 255, 0.8),
+                            0 0 160px rgba(29, 233, 182, 0.6);
+                transform: scale(1.02);
+            }
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: 300;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #00E5FF 0%, #1DE9B6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .tagline {
+            font-size: 18px;
+            color: #64FFDA;
+            margin-bottom: 50px;
+            opacity: 0.9;
+        }
+
+        .description {
+            font-size: 16px;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 40px;
+            padding: 0 20px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 18px 50px;
+            margin: 10px;
+            border: none;
+            border-radius: 30px;
+            background: linear-gradient(135deg, #00E5FF 0%, #1DE9B6 100%);
+            color: #121212;
+            font-size: 18px;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 30px rgba(0, 229, 255, 0.5);
+        }
+
+        .button:hover {
+            box-shadow: 0 8px 40px rgba(0, 229, 255, 0.7),
+                        0 0 60px rgba(29, 233, 182, 0.5);
+            transform: translateY(-3px);
+        }
+
+        .button-secondary {
+            background: rgba(0, 229, 255, 0.1);
+            color: #00E5FF;
+            border: 2px solid #00E5FF;
+            box-shadow: 0 6px 30px rgba(0, 229, 255, 0.3);
+        }
+
+        .button-secondary:hover {
+            background: rgba(0, 229, 255, 0.2);
+            box-shadow: 0 8px 40px rgba(0, 229, 255, 0.5);
+        }
+
+        .version {
+            margin-top: 50px;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .orb {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.2;
+            animation: float 25s infinite ease-in-out;
+            pointer-events: none;
+        }
+
+        .orb1 {
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, #00E5FF 0%, transparent 70%);
+            top: -100px;
+            right: -100px;
+            animation-delay: 0s;
+        }
+
+        .orb2 {
+            width: 350px;
+            height: 350px;
+            background: radial-gradient(circle, #1DE9B6 0%, transparent 70%);
+            bottom: -120px;
+            left: -120px;
+            animation-delay: -12s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translate(0, 0);
+            }
+            33% {
+                transform: translate(40px, -40px);
+            }
+            66% {
+                transform: translate(-30px, 30px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+
+    <div class="container">
+        <div class="logo">FEM</div>
+        <h1>Welcome to FEM</h1>
+        <p class="tagline">Empowering Women, Illuminating Lives</p>
+        
+        <p class="description">
+            Experience the FEM app through our interactive beta preview. 
+            Discover the bio-luminescent design and explore the features that 
+            make FEM your digital sanctuary.
+        </p>
+
+        <a href="beta-preview.html" class="button">View Beta Preview</a>
+        <a href="BETA_PREVIEW_GUIDE.md" class="button button-secondary">Read Guide</a>
+
+        <p class="version">Beta Version 1.0</p>
+    </div>
+</body>
+</html>
