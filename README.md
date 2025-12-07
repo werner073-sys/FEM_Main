@@ -51,6 +51,8 @@ For detailed build instructions, see **[BUILD_GUIDE.md](BUILD_GUIDE.md)**
 > **Note**: Building requires internet access to download dependencies from Maven Central and Google Maven repositories. If you're in a restricted network environment, ensure you can access:
 > - https://repo.maven.apache.org/maven2/
 > - https://dl.google.com/dl/android/maven2/
+>
+> **Behind a firewall or proxy?** See **[FIREWALL_GUIDE.md](FIREWALL_GUIDE.md)** for detailed configuration instructions.
 
 ## Project Structure
 
@@ -96,6 +98,7 @@ Key steps:
 ## Documentation
 
 - **[BUILD_GUIDE.md](BUILD_GUIDE.md)** - Comprehensive build instructions
+- **[FIREWALL_GUIDE.md](FIREWALL_GUIDE.md)** - Firewall and proxy configuration help
 - **[PLAY_STORE_CHECKLIST.md](PLAY_STORE_CHECKLIST.md)** - Play Store submission guide
 - **[PRIVACY_POLICY.md](PRIVACY_POLICY.md)** - Privacy policy template
 - **[CONTRIBUTING.md](CONTRIBUTING.md)** - Contribution guidelines

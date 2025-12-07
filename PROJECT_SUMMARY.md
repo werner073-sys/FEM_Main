@@ -146,10 +146,20 @@ Comprehensive guide covering:
 - Build commands
 - App signing
 - Running and testing
-- Troubleshooting
+- Troubleshooting (including firewall/proxy issues)
 - CI/CD setup
 
-### 2. PLAY_STORE_CHECKLIST.md
+### 2. FIREWALL_GUIDE.md
+Detailed firewall and network configuration guide:
+- Required domain access
+- Proxy configuration (gradle.properties, environment variables, Android Studio)
+- Firewall rules and port requirements
+- Maven mirror setup
+- Offline build instructions
+- Corporate IT request template
+- Authentication and SSL troubleshooting
+
+### 3. PLAY_STORE_CHECKLIST.md
 Complete checklist including:
 - Pre-submission requirements
 - Technical requirements
@@ -158,7 +168,7 @@ Complete checklist including:
 - Release process
 - Post-launch tasks
 
-### 3. PRIVACY_POLICY.md
+### 4. PRIVACY_POLICY.md
 Template privacy policy covering:
 - Information collection
 - Data usage
@@ -167,7 +177,7 @@ Template privacy policy covering:
 - Children's privacy
 - Contact information
 
-### 4. CONTRIBUTING.md
+### 5. CONTRIBUTING.md
 Contribution guidelines including:
 - How to report bugs
 - Feature suggestions
@@ -176,7 +186,7 @@ Contribution guidelines including:
 - Testing requirements
 - Documentation guidelines
 
-### 5. README.md
+### 6. README.md
 Updated with:
 - Project overview
 - Features list

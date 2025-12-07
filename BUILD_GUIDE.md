@@ -177,12 +177,102 @@ adb shell am start -n com.fem.app/.MainActivity
 - https://repo.maven.apache.org/maven2/
 - https://dl.google.com/dl/android/maven2/
 
-If behind a proxy, configure gradle.properties:
+#### Firewall and Proxy Configuration
+
+If you're behind a corporate firewall or proxy, you need to configure Gradle to use it.
+
+**Option 1: Configure in gradle.properties**
+
+Edit or create `gradle.properties` file in your project root or `~/.gradle/gradle.properties`:
+
 ```properties
+# Proxy configuration
 systemProp.http.proxyHost=proxy.company.com
 systemProp.http.proxyPort=8080
 systemProp.https.proxyHost=proxy.company.com
 systemProp.https.proxyPort=8080
+
+# If proxy requires authentication
+systemProp.http.proxyUser=username
+systemProp.http.proxyPassword=password
+systemProp.https.proxyUser=username
+systemProp.https.proxyPassword=password
+
+# Non-proxy hosts (optional)
+systemProp.http.nonProxyHosts=*.nonproxyrepos.com|localhost
+```
+
+**Option 2: Use environment variables**
+
+```bash
+# Linux/macOS
+export GRADLE_OPTS="-Dhttp.proxyHost=proxy.company.com -Dhttp.proxyPort=8080 -Dhttps.proxyHost=proxy.company.com -Dhttps.proxyPort=8080"
+
+# Windows (PowerShell)
+$env:GRADLE_OPTS="-Dhttp.proxyHost=proxy.company.com -Dhttp.proxyPort=8080 -Dhttps.proxyHost=proxy.company.com -Dhttps.proxyPort=8080"
+```
+
+**Option 3: Configure in Android Studio**
+
+1. Open **File → Settings → Appearance & Behavior → System Settings → HTTP Proxy**
+2. Select "Manual proxy configuration"
+3. Enter your proxy details
+4. Click "Check connection" to verify
+
+#### Firewall Rules Required
+
+If you manage your own firewall, allow outbound HTTPS connections to:
+
+**Required domains:**
+- `dl.google.com` - Google Maven repository (Android Gradle Plugin, Google libraries)
+- `repo.maven.apache.org` - Maven Central (Kotlin, AndroidX, third-party libraries)
+- `services.gradle.org` - Gradle distributions
+- `repo1.maven.org` - Maven Central mirror
+- `jcenter.bintray.com` - JCenter (deprecated but may be needed for older dependencies)
+- `plugins.gradle.org` - Gradle Plugin Portal
+
+**Ports:**
+- Port 443 (HTTPS)
+- Port 80 (HTTP, if needed)
+
+**Test connectivity:**
+```bash
+# Test Google Maven
+curl -I https://dl.google.com/dl/android/maven2/
+
+# Test Maven Central
+curl -I https://repo.maven.apache.org/maven2/
+
+# Test Gradle services
+curl -I https://services.gradle.org/distributions/
+```
+
+#### Using a Mirror Repository
+
+If you cannot access external repositories, set up a local Maven mirror (e.g., Nexus, Artifactory):
+
+```kotlin
+// In build.gradle.kts
+buildscript {
+    repositories {
+        maven {
+            url = uri("https://your-company-mirror.com/maven-public/")
+            // Add credentials if needed
+            credentials {
+                username = project.findProperty("repoUser") as String?
+                password = project.findProperty("repoPassword") as String?
+            }
+        }
+    }
+}
+
+allprojects {
+    repositories {
+        maven {
+            url = uri("https://your-company-mirror.com/maven-public/")
+        }
+    }
+}
 ```
 
 ### Issue: Android SDK not found
