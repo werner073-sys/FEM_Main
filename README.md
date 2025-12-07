@@ -95,10 +95,30 @@ Key steps:
 5. Test on multiple devices and Android versions
 6. Run full test suite
 
+## Testing with Firebase
+
+Want to test the app before releasing to the Play Store? Use **Firebase App Distribution** to share builds with testers.
+
+See **[FIREBASE_GUIDE.md](FIREBASE_GUIDE.md)** for complete instructions on:
+- Setting up Firebase App Distribution
+- Building and uploading APK files
+- Inviting testers
+- Collecting feedback
+
+Quick start:
+```bash
+# Build debug APK
+./gradlew assembleDebug
+
+# Upload to Firebase Console or use Firebase CLI
+firebase appdistribution:distribute app/build/outputs/apk/debug/app-debug.apk
+```
+
 ## Documentation
 
 - **[BUILD_GUIDE.md](BUILD_GUIDE.md)** - Comprehensive build instructions
 - **[FIREWALL_GUIDE.md](FIREWALL_GUIDE.md)** - Firewall and proxy configuration help
+- **[FIREBASE_GUIDE.md](FIREBASE_GUIDE.md)** - Firebase App Distribution setup for testing
 - **[PLAY_STORE_CHECKLIST.md](PLAY_STORE_CHECKLIST.md)** - Play Store submission guide
 - **[PRIVACY_POLICY.md](PRIVACY_POLICY.md)** - Privacy policy template
 - **[CONTRIBUTING.md](CONTRIBUTING.md)** - Contribution guidelines

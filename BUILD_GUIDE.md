@@ -170,6 +170,27 @@ adb shell am start -n com.fem.app/.MainActivity
 ./gradlew lint
 ```
 
+## Testing with Firebase App Distribution
+
+Before releasing to the Play Store, test your app with real users using Firebase App Distribution.
+
+See **[FIREBASE_GUIDE.md](FIREBASE_GUIDE.md)** for complete setup instructions.
+
+**Quick steps:**
+1. Build debug APK: `./gradlew assembleDebug`
+2. Create Firebase project at https://console.firebase.google.com/
+3. Add Android app with package `com.fem.app`
+4. Upload APK via Firebase Console
+5. Invite testers via email
+6. Collect feedback
+
+This allows you to:
+- Distribute pre-release builds to testers
+- Get feedback before Play Store release
+- Test on real devices with real users
+- Iterate quickly based on tester feedback
+```
+
 ## Common Issues and Solutions
 
 ### Issue: Gradle build fails with dependency errors

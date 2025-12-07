@@ -159,7 +159,17 @@ Detailed firewall and network configuration guide:
 - Corporate IT request template
 - Authentication and SSL troubleshooting
 
-### 3. PLAY_STORE_CHECKLIST.md
+### 3. FIREBASE_GUIDE.md
+Firebase App Distribution setup guide:
+- Setting up Firebase project
+- Adding Android app to Firebase
+- Building and uploading APK files
+- Inviting testers via email or groups
+- Collecting feedback from testers
+- Automated distribution with CI/CD
+- Troubleshooting installation issues
+
+### 4. PLAY_STORE_CHECKLIST.md
 Complete checklist including:
 - Pre-submission requirements
 - Technical requirements
@@ -168,7 +178,7 @@ Complete checklist including:
 - Release process
 - Post-launch tasks
 
-### 4. PRIVACY_POLICY.md
+### 5. PRIVACY_POLICY.md
 Template privacy policy covering:
 - Information collection
 - Data usage
@@ -177,7 +187,7 @@ Template privacy policy covering:
 - Children's privacy
 - Contact information
 
-### 5. CONTRIBUTING.md
+### 6. CONTRIBUTING.md
 Contribution guidelines including:
 - How to report bugs
 - Feature suggestions
@@ -186,7 +196,7 @@ Contribution guidelines including:
 - Testing requirements
 - Documentation guidelines
 
-### 6. README.md
+### 7. README.md
 Updated with:
 - Project overview
 - Features list
