@@ -189,12 +189,20 @@
         .menu-item-image {
             width: 100%;
             height: 200px;
-            object-fit: cover;
             background: linear-gradient(135deg, #f5e6d3 0%, #d4a574 100%);
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 60px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .menu-item-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
 
         .menu-item-content {
@@ -346,6 +354,15 @@
             justify-content: center;
             font-size: 32px;
             flex-shrink: 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .cart-item-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
 
         .cart-item-details {
@@ -815,7 +832,8 @@
                 description: "Traditional South African curried mince baked with an egg topping. A true Cape Malay classic!",
                 price: 200,
                 category: "traditional",
-                emoji: "🍛"
+                emoji: "🍛",
+                image: "assets/images/bobotie.jpg"
             },
             {
                 id: 2,
@@ -824,7 +842,8 @@
                 description: "Traditional South African curried mince baked with an egg topping. A true Cape Malay classic!",
                 price: 100,
                 category: "traditional",
-                emoji: "🍛"
+                emoji: "🍛",
+                image: "assets/images/bobotie.jpg"
             },
             {
                 id: 3,
@@ -833,7 +852,8 @@
                 description: "Traditional South African curried mince baked with an egg topping. A true Cape Malay classic!",
                 price: 70,
                 category: "traditional",
-                emoji: "🍛"
+                emoji: "🍛",
+                image: "assets/images/bobotie.jpg"
             },
             // Curry & Rice
             {
@@ -843,7 +863,8 @@
                 description: "Aromatic curry served with fluffy basmati rice. Rich, flavorful, and satisfying.",
                 price: 180,
                 category: "curries",
-                emoji: "🍛"
+                emoji: "🍛",
+                image: "assets/images/curry-rice.jpg"
             },
             {
                 id: 5,
@@ -852,7 +873,8 @@
                 description: "Aromatic curry served with fluffy basmati rice. Rich, flavorful, and satisfying.",
                 price: 100,
                 category: "curries",
-                emoji: "🍛"
+                emoji: "🍛",
+                image: "assets/images/curry-rice.jpg"
             },
             {
                 id: 6,
@@ -861,7 +883,8 @@
                 description: "Aromatic curry served with fluffy basmati rice. Rich, flavorful, and satisfying.",
                 price: 50,
                 category: "curries",
-                emoji: "🍛"
+                emoji: "🍛",
+                image: "assets/images/curry-rice.jpg"
             },
             // Chicken Briyani
             {
@@ -871,7 +894,8 @@
                 description: "Fragrant basmati rice with tender chicken pieces, aromatic spices, and herbs.",
                 price: 140,
                 category: "curries",
-                emoji: "🍚"
+                emoji: "🍚",
+                image: "assets/images/chicken-briyani.jpg"
             },
             {
                 id: 8,
@@ -880,7 +904,8 @@
                 description: "Fragrant basmati rice with tender chicken pieces, aromatic spices, and herbs.",
                 price: 75,
                 category: "curries",
-                emoji: "🍚"
+                emoji: "🍚",
+                image: "assets/images/chicken-briyani.jpg"
             },
             {
                 id: 9,
@@ -889,7 +914,8 @@
                 description: "Fragrant basmati rice with tender chicken pieces, aromatic spices, and herbs.",
                 price: 50,
                 category: "curries",
-                emoji: "🍚"
+                emoji: "🍚",
+                image: "assets/images/chicken-briyani.jpg"
             },
             // Spaghetti Bolognese
             {
@@ -899,7 +925,8 @@
                 description: "Classic Italian pasta with rich, slow-cooked beef and tomato sauce.",
                 price: 160,
                 category: "pasta",
-                emoji: "🍝"
+                emoji: "🍝",
+                image: "assets/images/spaghetti-bolognese.jpg"
             },
             {
                 id: 11,
@@ -908,7 +935,8 @@
                 description: "Classic Italian pasta with rich, slow-cooked beef and tomato sauce.",
                 price: 80,
                 category: "pasta",
-                emoji: "🍝"
+                emoji: "🍝",
+                image: "assets/images/spaghetti-bolognese.jpg"
             },
             {
                 id: 12,
@@ -917,7 +945,8 @@
                 description: "Classic Italian pasta with rich, slow-cooked beef and tomato sauce.",
                 price: 50,
                 category: "pasta",
-                emoji: "🍝"
+                emoji: "🍝",
+                image: "assets/images/spaghetti-bolognese.jpg"
             },
             // Beef Lasagne
             {
@@ -927,7 +956,8 @@
                 description: "Layers of pasta, rich beef sauce, creamy béchamel, and melted cheese.",
                 price: 140,
                 category: "pasta",
-                emoji: "🍝"
+                emoji: "🍝",
+                image: "assets/images/beef-lasagne.jpg"
             },
             {
                 id: 14,
@@ -936,7 +966,8 @@
                 description: "Layers of pasta, rich beef sauce, creamy béchamel, and melted cheese.",
                 price: 95,
                 category: "pasta",
-                emoji: "🍝"
+                emoji: "🍝",
+                image: "assets/images/beef-lasagne.jpg"
             },
             {
                 id: 15,
@@ -945,7 +976,8 @@
                 description: "Layers of pasta, rich beef sauce, creamy béchamel, and melted cheese.",
                 price: 65,
                 category: "pasta",
-                emoji: "🍝"
+                emoji: "🍝",
+                image: "assets/images/beef-lasagne.jpg"
             },
             // Chicken Lasagne
             {
@@ -955,7 +987,8 @@
                 description: "Delicious layers of pasta with chicken, white sauce, and cheese. A family favorite!",
                 price: 130,
                 category: "pasta",
-                emoji: "🍝"
+                emoji: "🍝",
+                image: "assets/images/chicken-lasagne.jpg"
             },
             {
                 id: 17,
@@ -964,7 +997,8 @@
                 description: "Delicious layers of pasta with chicken, white sauce, and cheese. A family favorite!",
                 price: 75,
                 category: "pasta",
-                emoji: "🍝"
+                emoji: "🍝",
+                image: "assets/images/chicken-lasagne.jpg"
             },
             {
                 id: 18,
@@ -973,7 +1007,8 @@
                 description: "Delicious layers of pasta with chicken, white sauce, and cheese. A family favorite!",
                 price: 50,
                 category: "pasta",
-                emoji: "🍝"
+                emoji: "🍝",
+                image: "assets/images/chicken-lasagne.jpg"
             },
             // Country Chicken Pie
             {
@@ -983,7 +1018,8 @@
                 description: "Hearty chicken pie with vegetables in a creamy sauce, wrapped in golden pastry.",
                 price: 240,
                 category: "pies",
-                emoji: "🥧"
+                emoji: "🥧",
+                image: "assets/images/chicken-pie.jpg"
             },
             {
                 id: 20,
@@ -992,7 +1028,8 @@
                 description: "Hearty chicken pie with vegetables in a creamy sauce, wrapped in golden pastry.",
                 price: 140,
                 category: "pies",
-                emoji: "🥧"
+                emoji: "🥧",
+                image: "assets/images/chicken-pie.jpg"
             },
             {
                 id: 21,
@@ -1001,7 +1038,8 @@
                 description: "Hearty chicken pie with vegetables in a creamy sauce, wrapped in golden pastry.",
                 price: 75,
                 category: "pies",
-                emoji: "🥧"
+                emoji: "🥧",
+                image: "assets/images/chicken-pie.jpg"
             },
             {
                 id: 22,
@@ -1010,7 +1048,8 @@
                 description: "Hearty chicken pie with vegetables in a creamy sauce, wrapped in golden pastry.",
                 price: 50,
                 category: "pies",
-                emoji: "🥧"
+                emoji: "🥧",
+                image: "assets/images/chicken-pie.jpg"
             }
         ];
 
@@ -1052,7 +1091,9 @@
             // Render items
             menuGrid.innerHTML = filteredItems.map(item => `
                 <div class="menu-item">
-                    <div class="menu-item-image">${item.emoji}</div>
+                    <div class="menu-item-image">
+                        ${item.image ? `<img src="${item.image}" alt="${item.name}" onerror="this.style.display='none'; this.parentElement.innerHTML='${item.emoji}';">` : item.emoji}
+                    </div>
                     <div class="menu-item-content">
                         <div class="menu-item-header">
                             <div>
@@ -1176,7 +1217,9 @@
 
                 cartItems.innerHTML = cart.map(item => `
                     <div class="cart-item">
-                        <div class="cart-item-image">${item.emoji}</div>
+                        <div class="cart-item-image">
+                            ${item.image ? `<img src="${item.image}" alt="${item.name}" onerror="this.style.display='none'; this.parentElement.innerHTML='${item.emoji}';">` : item.emoji}
+                        </div>
                         <div class="cart-item-details">
                             <div class="cart-item-name">${item.name} - ${item.size}</div>
                             <div class="cart-item-price">R${item.price} each</div>

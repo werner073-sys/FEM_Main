@@ -107,9 +107,20 @@ Menu items are defined in the `menuData` array in `index.html`. Each item has:
 - `description`: Item description
 - `price`: Price in South African Rand (no decimals, e.g., 200 for R200)
 - `category`: One of: traditional, curries, pasta, pies
-- `emoji`: Icon to display
+- `emoji`: Icon to display (fallback if image not available)
+- `image`: Path to food photo (e.g., "assets/images/bobotie.jpg")
 
 To add/edit items, modify the `menuData` array (starts at line 809).
+
+### Adding Food Photography Images
+
+The application is configured to use high-quality food photos:
+1. Add image files to `assets/images/` directory
+2. Required images: `bobotie.jpg`, `curry-rice.jpg`, `chicken-briyani.jpg`, `spaghetti-bolognese.jpg`, `beef-lasagne.jpg`, `chicken-lasagne.jpg`, `chicken-pie.jpg`
+3. Recommended: 800x600px or larger, JPG/PNG/WebP format, under 300KB each
+4. See `assets/images/README.md` for detailed specifications and tips
+
+**Fallback**: If images are not available, emoji icons will display automatically.
 
 ## Features in Detail
 
