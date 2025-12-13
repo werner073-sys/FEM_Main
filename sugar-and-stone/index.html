@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sugar & Stone - Artisan Bakery & Desserts</title>
+    <title>Sugar & Stone - Home Cooked Meals</title>
     <style>
         * {
             margin: 0;
@@ -692,7 +692,7 @@
             </div>
             <div class="header-actions">
                 <div class="search-bar">
-                    <input type="text" id="searchInput" placeholder="Search for desserts...">
+                    <input type="text" id="searchInput" placeholder="Search for meals...">
                     <button onclick="searchMenu()">🔍</button>
                 </div>
                 <button class="cart-button" onclick="openCart()">
@@ -708,10 +708,10 @@
         <!-- Category Filter -->
         <div class="category-filter">
             <button class="category-btn active" onclick="filterCategory('all')">All Items</button>
-            <button class="category-btn" onclick="filterCategory('cakes')">Cakes</button>
-            <button class="category-btn" onclick="filterCategory('pastries')">Pastries</button>
-            <button class="category-btn" onclick="filterCategory('beverages')">Beverages</button>
-            <button class="category-btn" onclick="filterCategory('desserts')">Desserts</button>
+            <button class="category-btn" onclick="filterCategory('traditional')">Traditional</button>
+            <button class="category-btn" onclick="filterCategory('curries')">Curries</button>
+            <button class="category-btn" onclick="filterCategory('pasta')">Pasta</button>
+            <button class="category-btn" onclick="filterCategory('pies')">Pies</button>
         </div>
 
         <!-- Menu Grid -->
@@ -807,169 +807,210 @@
     <script>
         // Menu Data
         const menuData = [
-            // Cakes
+            // Bobotie
             {
                 id: 1,
-                name: "Chocolate Fudge Cake",
-                description: "Rich, moist chocolate cake layered with velvety fudge frosting. A chocolate lover's dream!",
-                price: 45.00,
-                category: "cakes",
-                emoji: "🍫"
+                name: "Bobotie",
+                size: "1kg",
+                description: "Traditional South African curried mince baked with an egg topping. A true Cape Malay classic!",
+                price: 200,
+                category: "traditional",
+                emoji: "🍛"
             },
             {
                 id: 2,
-                name: "Red Velvet Cake",
-                description: "Classic red velvet with cream cheese frosting. Elegant and delicious for any occasion.",
-                price: 42.00,
-                category: "cakes",
-                emoji: "❤️"
+                name: "Bobotie",
+                size: "500g",
+                description: "Traditional South African curried mince baked with an egg topping. A true Cape Malay classic!",
+                price: 100,
+                category: "traditional",
+                emoji: "🍛"
             },
             {
                 id: 3,
-                name: "Vanilla Bean Cake",
-                description: "Light and fluffy vanilla cake made with real vanilla beans and buttercream frosting.",
-                price: 38.00,
-                category: "cakes",
-                emoji: "🎂"
+                name: "Bobotie",
+                size: "250g",
+                description: "Traditional South African curried mince baked with an egg topping. A true Cape Malay classic!",
+                price: 70,
+                category: "traditional",
+                emoji: "🍛"
             },
+            // Curry & Rice
             {
                 id: 4,
-                name: "Carrot Cake",
-                description: "Moist carrot cake with walnuts, raisins, and cream cheese frosting. A classic favorite!",
-                price: 40.00,
-                category: "cakes",
-                emoji: "🥕"
+                name: "Curry & Rice",
+                size: "1kg",
+                description: "Aromatic curry served with fluffy basmati rice. Rich, flavorful, and satisfying.",
+                price: 180,
+                category: "curries",
+                emoji: "🍛"
             },
             {
                 id: 5,
-                name: "Lemon Drizzle Cake",
-                description: "Refreshing lemon cake with a tangy citrus glaze. Perfect for summer days.",
-                price: 36.00,
-                category: "cakes",
-                emoji: "🍋"
+                name: "Curry & Rice",
+                size: "500g",
+                description: "Aromatic curry served with fluffy basmati rice. Rich, flavorful, and satisfying.",
+                price: 100,
+                category: "curries",
+                emoji: "🍛"
             },
-            // Pastries
             {
                 id: 6,
-                name: "Croissant",
-                description: "Buttery, flaky French croissant. Perfect for breakfast or a light snack.",
-                price: 4.50,
-                category: "pastries",
-                emoji: "🥐"
+                name: "Curry & Rice",
+                size: "250g",
+                description: "Aromatic curry served with fluffy basmati rice. Rich, flavorful, and satisfying.",
+                price: 50,
+                category: "curries",
+                emoji: "🍛"
             },
+            // Chicken Briyani
             {
                 id: 7,
-                name: "Pain au Chocolat",
-                description: "Flaky pastry filled with rich dark chocolate. A French classic!",
-                price: 5.00,
-                category: "pastries",
-                emoji: "🥐"
+                name: "Chicken Briyani",
+                size: "1kg",
+                description: "Fragrant basmati rice with tender chicken pieces, aromatic spices, and herbs.",
+                price: 140,
+                category: "curries",
+                emoji: "🍚"
             },
             {
                 id: 8,
-                name: "Almond Danish",
-                description: "Sweet pastry topped with almond cream and sliced almonds.",
-                price: 5.50,
-                category: "pastries",
-                emoji: "🥮"
+                name: "Chicken Briyani",
+                size: "500g",
+                description: "Fragrant basmati rice with tender chicken pieces, aromatic spices, and herbs.",
+                price: 75,
+                category: "curries",
+                emoji: "🍚"
             },
             {
                 id: 9,
-                name: "Fruit Tart",
-                description: "Buttery tart shell filled with vanilla custard and fresh seasonal fruits.",
-                price: 6.50,
-                category: "pastries",
-                emoji: "🍓"
+                name: "Chicken Briyani",
+                size: "250g",
+                description: "Fragrant basmati rice with tender chicken pieces, aromatic spices, and herbs.",
+                price: 50,
+                category: "curries",
+                emoji: "🍚"
             },
+            // Spaghetti Bolognese
             {
                 id: 10,
-                name: "Eclair",
-                description: "Classic French pastry filled with vanilla cream and topped with chocolate glaze.",
-                price: 5.50,
-                category: "pastries",
-                emoji: "🍰"
+                name: "Spaghetti Bolognese",
+                size: "1kg",
+                description: "Classic Italian pasta with rich, slow-cooked beef and tomato sauce.",
+                price: 160,
+                category: "pasta",
+                emoji: "🍝"
             },
-            // Beverages
             {
                 id: 11,
-                name: "Cappuccino",
-                description: "Espresso with steamed milk and foam. Rich and creamy coffee experience.",
-                price: 5.00,
-                category: "beverages",
-                emoji: "☕"
+                name: "Spaghetti Bolognese",
+                size: "500g",
+                description: "Classic Italian pasta with rich, slow-cooked beef and tomato sauce.",
+                price: 80,
+                category: "pasta",
+                emoji: "🍝"
             },
             {
                 id: 12,
-                name: "Latte",
-                description: "Smooth espresso with steamed milk. Available with various flavors.",
-                price: 5.50,
-                category: "beverages",
-                emoji: "☕"
+                name: "Spaghetti Bolognese",
+                size: "250g",
+                description: "Classic Italian pasta with rich, slow-cooked beef and tomato sauce.",
+                price: 50,
+                category: "pasta",
+                emoji: "🍝"
             },
+            // Beef Lasagne
             {
                 id: 13,
-                name: "Iced Coffee",
-                description: "Cold brew coffee served over ice. Refreshing and energizing.",
-                price: 4.50,
-                category: "beverages",
-                emoji: "🧊"
+                name: "Beef Lasagne",
+                size: "1kg",
+                description: "Layers of pasta, rich beef sauce, creamy béchamel, and melted cheese.",
+                price: 140,
+                category: "pasta",
+                emoji: "🍝"
             },
             {
                 id: 14,
-                name: "Hot Chocolate",
-                description: "Rich and creamy hot chocolate topped with whipped cream and marshmallows.",
-                price: 4.50,
-                category: "beverages",
-                emoji: "☕"
+                name: "Beef Lasagne",
+                size: "500g",
+                description: "Layers of pasta, rich beef sauce, creamy béchamel, and melted cheese.",
+                price: 95,
+                category: "pasta",
+                emoji: "🍝"
             },
             {
                 id: 15,
-                name: "Fresh Juice",
-                description: "Freshly squeezed orange, apple, or mixed fruit juice.",
-                price: 4.00,
-                category: "beverages",
-                emoji: "🧃"
+                name: "Beef Lasagne",
+                size: "250g",
+                description: "Layers of pasta, rich beef sauce, creamy béchamel, and melted cheese.",
+                price: 65,
+                category: "pasta",
+                emoji: "🍝"
             },
-            // Desserts
+            // Chicken Lasagne
             {
                 id: 16,
-                name: "Tiramisu",
-                description: "Classic Italian dessert with coffee-soaked ladyfingers and mascarpone cream.",
-                price: 8.50,
-                category: "desserts",
-                emoji: "🍮"
+                name: "Chicken Lasagne",
+                size: "1kg",
+                description: "Delicious layers of pasta with chicken, white sauce, and cheese. A family favorite!",
+                price: 130,
+                category: "pasta",
+                emoji: "🍝"
             },
             {
                 id: 17,
-                name: "Cheesecake",
-                description: "Creamy New York style cheesecake with graham cracker crust. Choice of toppings.",
-                price: 7.50,
-                category: "desserts",
-                emoji: "🍰"
+                name: "Chicken Lasagne",
+                size: "500g",
+                description: "Delicious layers of pasta with chicken, white sauce, and cheese. A family favorite!",
+                price: 75,
+                category: "pasta",
+                emoji: "🍝"
             },
             {
                 id: 18,
-                name: "Brownie",
-                description: "Fudgy chocolate brownie with walnuts. Served warm with ice cream optional.",
-                price: 6.00,
-                category: "desserts",
-                emoji: "🍫"
+                name: "Chicken Lasagne",
+                size: "250g",
+                description: "Delicious layers of pasta with chicken, white sauce, and cheese. A family favorite!",
+                price: 50,
+                category: "pasta",
+                emoji: "🍝"
             },
+            // Country Chicken Pie
             {
                 id: 19,
-                name: "Macarons (Box of 6)",
-                description: "Delicate French macarons in assorted flavors. Beautiful and delicious!",
-                price: 15.00,
-                category: "desserts",
-                emoji: "🌈"
+                name: "Country Chicken Pie",
+                size: "2kg",
+                description: "Hearty chicken pie with vegetables in a creamy sauce, wrapped in golden pastry.",
+                price: 240,
+                category: "pies",
+                emoji: "🥧"
             },
             {
                 id: 20,
-                name: "Panna Cotta",
-                description: "Silky Italian dessert with vanilla bean and berry compote.",
-                price: 7.00,
-                category: "desserts",
-                emoji: "🍮"
+                name: "Country Chicken Pie",
+                size: "1kg",
+                description: "Hearty chicken pie with vegetables in a creamy sauce, wrapped in golden pastry.",
+                price: 140,
+                category: "pies",
+                emoji: "🥧"
+            },
+            {
+                id: 21,
+                name: "Country Chicken Pie",
+                size: "500g",
+                description: "Hearty chicken pie with vegetables in a creamy sauce, wrapped in golden pastry.",
+                price: 75,
+                category: "pies",
+                emoji: "🥧"
+            },
+            {
+                id: 22,
+                name: "Country Chicken Pie",
+                size: "250g",
+                description: "Hearty chicken pie with vegetables in a creamy sauce, wrapped in golden pastry.",
+                price: 50,
+                category: "pies",
+                emoji: "🥧"
             }
         ];
 
@@ -1015,9 +1056,9 @@
                     <div class="menu-item-content">
                         <div class="menu-item-header">
                             <div>
-                                <div class="menu-item-name">${item.name}</div>
+                                <div class="menu-item-name">${item.name} - ${item.size}</div>
                             </div>
-                            <div class="menu-item-price">$${item.price.toFixed(2)}</div>
+                            <div class="menu-item-price">R${item.price}</div>
                         </div>
                         <div class="menu-item-description">${item.description}</div>
                         <button class="add-to-cart-btn" onclick="addToCart(${item.id})">
@@ -1137,8 +1178,8 @@
                     <div class="cart-item">
                         <div class="cart-item-image">${item.emoji}</div>
                         <div class="cart-item-details">
-                            <div class="cart-item-name">${item.name}</div>
-                            <div class="cart-item-price">$${item.price.toFixed(2)} each</div>
+                            <div class="cart-item-name">${item.name} - ${item.size}</div>
+                            <div class="cart-item-price">R${item.price} each</div>
                         </div>
                         <div class="cart-item-actions">
                             <div class="quantity-controls">
@@ -1155,8 +1196,8 @@
                 const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
                 const total = subtotal; // Add tax/delivery fees here if needed
 
-                document.getElementById('subtotal').textContent = `$${subtotal.toFixed(2)}`;
-                document.getElementById('total').textContent = `$${total.toFixed(2)}`;
+                document.getElementById('subtotal').textContent = `R${subtotal}`;
+                document.getElementById('total').textContent = `R${total}`;
             }
         }
 
@@ -1207,11 +1248,11 @@
             
             message += `*Order Items:*\n`;
             cart.forEach(item => {
-                message += `• ${item.name} x${item.quantity} - $${(item.price * item.quantity).toFixed(2)}\n`;
+                message += `• ${item.name} (${item.size}) x${item.quantity} - R${(item.price * item.quantity)}\n`;
             });
 
             const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-            message += `\n*Total: $${total.toFixed(2)}*\n`;
+            message += `\n*Total: R${total}*\n`;
 
             if (notes) {
                 message += `\n*Special Instructions:*\n${notes}`;

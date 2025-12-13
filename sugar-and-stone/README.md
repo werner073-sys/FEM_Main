@@ -1,14 +1,19 @@
-# Sugar & Stone - Artisan Bakery & Desserts Ordering App
+# Sugar & Stone - Home Cooked Meals Ordering App
 
-A modern, mobile-responsive web application for ordering delicious bakery items and desserts online. Orders are placed directly through WhatsApp for seamless communication.
+A modern, mobile-responsive web application for ordering delicious home-cooked South African meals. Orders are placed directly through WhatsApp for seamless communication.
 
 ## Features
 
-### 🍰 Complete Menu System
-- **Cakes**: Chocolate Fudge, Red Velvet, Vanilla Bean, Carrot, Lemon Drizzle
-- **Pastries**: Croissants, Pain au Chocolat, Almond Danish, Fruit Tarts, Eclairs
-- **Beverages**: Cappuccino, Latte, Iced Coffee, Hot Chocolate, Fresh Juice
-- **Desserts**: Tiramisu, Cheesecake, Brownies, Macarons, Panna Cotta
+### 🍛 Complete Menu System
+- **Bobotie**: Traditional South African curried mince (1kg, 500g, 250g)
+- **Curry & Rice**: Aromatic curry with basmati rice (1kg, 500g, 250g)
+- **Chicken Briyani**: Fragrant rice with spiced chicken (1kg, 500g, 250g)
+- **Spaghetti Bolognese**: Classic Italian pasta (1kg, 500g, 250g)
+- **Beef Lasagne**: Layered pasta with rich beef sauce (1kg, 500g, 250g)
+- **Chicken Lasagne**: Creamy chicken lasagne (1kg, 500g, 250g)
+- **Country Chicken Pie**: Hearty chicken pie (2kg, 1kg, 500g, 250g)
+
+All items available in multiple sizes with prices in South African Rand (R)
 
 ### 🛒 Shopping Cart Functionality
 - Add items to cart with a single click
@@ -25,15 +30,15 @@ A modern, mobile-responsive web application for ordering delicious bakery items 
 - Order confirmation display
 
 ### 🎨 Professional UI/UX
-- Clean, elegant design matching a bakery aesthetic
-- Warm color palette (browns, golds, cream)
+- Clean, elegant design with warm color palette (browns, golds, cream)
 - Smooth animations and transitions
 - Toast notifications for user feedback
 - Modal-based cart interface
+- Multiple sizes displayed for each meal
 
 ### 🔍 Search & Filter
 - Real-time search by item name or description
-- Category filtering (All, Cakes, Pastries, Beverages, Desserts)
+- Category filtering (All Items, Traditional, Curries, Pasta, Pies)
 - "No results" message when nothing matches
 
 ### 📱 Mobile Responsive
@@ -89,6 +94,7 @@ const whatsappNumber = '1234567890'; // Replace with your actual WhatsApp number
 ```
 
 **Format**: Use international format without + or spaces
+- Example: For South Africa +27 (82) 123-4567 use: `27821234567`
 - Example: For US +1 (555) 123-4567 use: `15551234567`
 - Example: For UK +44 20 1234 5678 use: `442012345678`
 
@@ -96,10 +102,11 @@ const whatsappNumber = '1234567890'; // Replace with your actual WhatsApp number
 
 Menu items are defined in the `menuData` array in `index.html`. Each item has:
 - `id`: Unique identifier
-- `name`: Item name
+- `name`: Item name (e.g., "Bobotie", "Curry & Rice")
+- `size`: Size portion (e.g., "1kg", "500g", "250g")
 - `description`: Item description
-- `price`: Price in dollars
-- `category`: One of: cakes, pastries, beverages, desserts
+- `price`: Price in South African Rand (no decimals, e.g., 200 for R200)
+- `category`: One of: traditional, curries, pasta, pies
 - `emoji`: Icon to display
 
 To add/edit items, modify the `menuData` array (starts at line 809).

@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository now includes a **separate web application** for Sugar & Stone, an artisan bakery and desserts ordering system. This is completely independent from the main FEM Android application.
+This repository now includes a **separate web application** for Sugar & Stone, a home-cooked meals ordering system. This is completely independent from the main FEM Android application.
 
 ## Location
 
@@ -12,15 +12,17 @@ This is a standalone web application that can be deployed independently or acces
 
 ## What is Sugar & Stone?
 
-Sugar & Stone is a complete e-commerce ordering application for a bakery/dessert business with the following features:
+Sugar & Stone is a complete e-commerce ordering application for home-cooked South African meals with the following features:
 
 ### ✨ Key Features
 
-- **20 Menu Items** across 4 categories:
-  - 🎂 Cakes (Chocolate Fudge, Red Velvet, Vanilla Bean, Carrot, Lemon Drizzle)
-  - 🥐 Pastries (Croissants, Pain au Chocolat, Danish, Tarts, Eclairs)
-  - ☕ Beverages (Cappuccino, Latte, Iced Coffee, Hot Chocolate, Fresh Juice)
-  - 🍰 Desserts (Tiramisu, Cheesecake, Brownies, Macarons, Panna Cotta)
+- **22 Menu Items** across 4 categories (all in multiple sizes):
+  - 🍛 Traditional (Bobotie in 1kg, 500g, 250g)
+  - 🍛 Curries (Curry & Rice, Chicken Briyani in various sizes)
+  - 🍝 Pasta (Spaghetti Bolognese, Beef Lasagne, Chicken Lasagne)
+  - 🥧 Pies (Country Chicken Pie in 2kg, 1kg, 500g, 250g)
+  
+All items with prices in South African Rand (R)
 
 - **Shopping Cart System**:
   - Add/remove items
@@ -34,9 +36,10 @@ Sugar & Stone is a complete e-commerce ordering application for a bakery/dessert
   - Order confirmation display
 
 - **Modern UI/UX**:
-  - Professional bakery theme
+  - Professional design with warm color palette
   - Fully responsive (mobile, tablet, desktop)
-  - Search and filter functionality
+  - Search and filter functionality (Traditional, Curries, Pasta, Pies)
+  - Multiple size options per meal
   - Modal-based cart
   - Toast notifications
 
@@ -78,6 +81,7 @@ const whatsappNumber = '1234567890'; // Replace with your number
 ```
 
 Use international format without + or spaces:
+- South Africa: +27 (82) 123-4567 → `27821234567`
 - US: +1 (555) 123-4567 → `15551234567`
 - UK: +44 20 1234 5678 → `442012345678`
 
@@ -102,7 +106,7 @@ See `/sugar-and-stone/README.md` for:
 ## Why is this in the FEM repository?
 
 This is a **separate application** that has been added to the FEM_Main repository as requested. It is completely independent and can be:
-- Used as-is for a bakery business
+- Used as-is for a home-cooked meals business
 - Deployed separately
 - Customized for any food ordering business
 - Extracted to its own repository
@@ -113,7 +117,7 @@ This is a **separate application** that has been added to the FEM_Main repositor
 |--------|---------|---------------|
 | **Type** | Android Native App | Web Application |
 | **Technology** | Kotlin, Android SDK | HTML, CSS, JavaScript |
-| **Purpose** | Women's empowerment app | Bakery ordering system |
+| **Purpose** | Women's empowerment app | Home-cooked meals ordering |
 | **Platform** | Android devices | Any web browser |
 | **Location** | `/app/` directory | `/sugar-and-stone/` directory |
 
