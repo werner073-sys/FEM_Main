@@ -84,7 +84,7 @@ Upload the entire `sugar-and-stone` directory to any web hosting service:
 To receive orders, update the WhatsApp business number in `index.html`:
 
 ```javascript
-// Line ~1079 in the submitOrder() function
+// Line 1224 in the submitOrder() function
 const whatsappNumber = '1234567890'; // Replace with your actual WhatsApp number
 ```
 
@@ -102,7 +102,7 @@ Menu items are defined in the `menuData` array in `index.html`. Each item has:
 - `category`: One of: cakes, pastries, beverages, desserts
 - `emoji`: Icon to display
 
-To add/edit items, modify the `menuData` array (starts around line 699).
+To add/edit items, modify the `menuData` array (starts at line 809).
 
 ## Features in Detail
 
